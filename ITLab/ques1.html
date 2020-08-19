@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        body{
+            margin:0 auto;
+            padding: 3rem;
+            background-color: cornflowerblue;
+        }
+
+        form{         
+            padding-top: 1rem;
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+            border: 1px solid black;
+        }
+    </style>
+      
+</head>
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form method="POST">
+        <p>Enter Name:</p>
+        <input type="text" id="name" style="height: 20px;">
+        <p>Enter Roll no:</p>
+        <input type="number" id="rno" style="height: 20px;">
+        <p>Enter DOB:</p>
+        <input type="date" id="dob" style="height: 20px;">
+        <br><br>
+        <input type="button" value="Submit" onclick="validate();" style="height: 30px;width: 90px;"/>
+    </form>
+
+    <script type="text/javascript" >
+
+        function validate()
+        {
+          //initialise
+          var name = document.getElementById("name");
+          var rno = document.getElementById("rno");
+          var dob = document.getElementById("dob");
+          var pattern = /[a-zA-Z]+\s[a-zA-Z]*$/;
+          var rollcheck = /^[0-9]{7}$/;
+          var Days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+          var Months = ['January','February','March','April','May','June','July','August','September','October','November','December'] 
+          var date = new Date(dob.value);
+           
+
+          //Name Check
+          if(name.value.length === 0)
+          {
+              alert("Name is required");
+          }
+          else if(!pattern.test(name.value)){
+              alert("Enter a valid Name");
+          }
+          
+          //Roll check
+          if(rno.value.length != 7 && !rollcheck.test(rno))
+          {
+              alert("Enter a valid Roll no.")
+          }
+  
+          //DOB check
+          if(dob.value.length == 0)
+          {
+              alert("DOB is required")
+          }
+          else {
+              var syn = Days[date.getDay()]+","+ date.getDate()+ "," + Months[date.getMonth()] + "," + dob.value.substr(0,4);
+             alert(syn)
+          }
+
+        }
+      </script>
+</body>
+</html>
