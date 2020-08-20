@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 3</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let length = parseInt(prompt("Enter the length"))
+        let size = length
+        var inputArray = new Array();
+
+        //user
+        for(let i=0; i<size; i++) {
+	    inputArray[i] = parseInt(prompt('Enter Element ' + (i+1)));
+        }
+
+        //bubble sort
+        for(let i=0;i<size;i++)
+        {
+            for(let j = 0; j < size-i-1; j++)
+            {
+                if(inputArray[j]>inputArray[j+1])
+                {   let temp=inputArray[j];
+                    inputArray[j]=inputArray[j+1];
+                    inputArray[j+1]=temp;
+                }
+            }
+        }
+
+        //display
+        document.write("After sort:")
+        document.write(inputArray)
+         
+        
+    </script>
+</body>
+</html>
