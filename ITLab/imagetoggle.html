@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Image toggle</title>
+
+<script language="javascript">
+	function MouseRollover(MyImage) {
+       	 MyImage.src = "2.jpg";
+    }
+	function MouseOut(MyImage) {
+        	MyImage.src = "1.jpg";
+    }
+</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="1.jpg" width="200px" height="200px" 
+onMouseOver="MouseRollover(this)" 
+onMouseOut="MouseOut(this)" />
+</div>
+
+</body>
+</html>
