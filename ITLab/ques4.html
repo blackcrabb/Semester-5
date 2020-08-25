@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 4</title>
+</head>
+<body>
+    <button type="button" onclick="push();">push</button>
+    <button type="button" onclick="pop();">pop</button>
+    <button type="button" onclick="display();">display</button>
+    <div id="check"></div>
+    <script type="text/javascript">
+
+        var div = document.getElementById("check")
+        var size = parseInt(prompt("Enter length of array"))
+        var arr = new Array(size)
+        var top1= -1
+        function push( )
+        {
+            if(top1 >= size-1)
+            {
+                document.getElementById("check").innerHTML = "Stack Overflow"
+            }
+            else
+            {
+                
+                let pushed = parseInt(prompt("Enter an element"))
+                ++top1;
+                arr[top1] = pushed
+               
+            }
+            
+        }
+
+        function pop()
+        {   
+            let el;
+            if(top1 == -1)
+            {
+                document.getElementById("check").innerHTML = "Stack Underflow"
+            }
+            else{
+                el= arr[top1];
+                top1--;
+            }
+        }
+
+        function display()
+        {
+           
+            var html='';
+            for (let i=0; i<=top1; i++) {
+             html+='<div>'+arr[i]+'</div>';
+            }
+            div.innerHTML+= html;
+       
+        }
+    </script>
+</body>
+</script>
+<body>
