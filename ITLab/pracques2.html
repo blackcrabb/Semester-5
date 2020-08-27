@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Series </title>
+</head>
+<body>
+	Enter the number of elements for the series 1/2+3/4+5/6...<br><br>
+	<input type="text" name="input" id="input"><br>
+    <input type="button" name="but" value="Submit" onclick="ser();">
+    <script language="javascript">
+		function ser()
+		{
+			var ch=/^[0-9]+$/
+			var val=document.getElementById("input").value;
+			if(document.getElementById("input").value.length!=0)
+			{
+				if(ch.test(val))
+				{
+					let sum=0;
+					for(let i=1;i<=val;i++)
+						sum+=i/(i+1);
+					document.write(sum);
+				}
+				else
+					alert("Not a valid number");
+			}
+			else
+				alert("Empty input");
+		}
+	</script>
+</body>
+</html>

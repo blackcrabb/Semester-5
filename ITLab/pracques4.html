@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prac Ques 4</title>
+</head>
+<body>
+    Enter a 1 digit number<br>
+    <input type="text" name="input" id="inputin" onkeyup="check();" >
+    <br>
+     <p id="result"></p>
+    <script language="javascript">
+		function check()
+		{
+			var temp=/^[0-9]$/
+			var inp= document.getElementById("inputin").value;
+            var result =document.getElementById("result")
+			if(temp.test(inp))
+			{
+				result.innerHTML = "Output is" + inp;
+			}
+			else
+				alert("Only 1 digit no. is allowed");
+		}
+	</script>
+</body>
+</html>
